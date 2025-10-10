@@ -1,3 +1,7 @@
-import get_release from "./modules/get_release.ts";
+import surge_release from "./modules/surge_release.ts";
 
-console.log(get_release("surge-synthesizer/surge", "windows"));
+const nightly = surge_release("windows", "nightly");
+console.log(nightly);
+
+const stable = surge_release("windows", "stable");
+console.log(stable);
