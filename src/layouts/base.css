@@ -108,7 +108,7 @@
     }
 
     a {
-        @apply hover:text-surge-orange-bright text-surge-orange underline;
+        @apply hover:text-surge-orange;
     }
 
     article {
