@@ -1,0 +1,14 @@
+---
+// import { get_release } from "../module/index";
+
+interface Props {
+    repo: string;
+    platform?: "windows" | "mac" | "linux";
+}
+
+const { repo, platform } = Astro.props;
+// const release = get_release(repo, platform);
+const release = "";
+---
+
+<a class="download-button" href={release}>Download {repo} {release}</a>

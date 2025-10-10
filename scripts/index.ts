@@ -1,33 +1,37 @@
-// import { execSync } from "child_process";
-// import fs from "fs";
-// import path from "path";
+import { execSync } from "child_process";
 
-// const build_dir = path.join(import.meta.dirname, "..", "generated");
+let downloadUrl: string | null = null;
 
-// if (!fs.existsSync(build_dir)) {
-//     fs.mkdirSync(build_dir, { recursive: true });
-// }
+export function get_release(repo: string, platform?: "windows" | "mac" | "linux") {
+    try {
+        const result = execSync(`gh release -R ${repo} view --json tagName,url,assets`, {
+            encoding: "utf-8",
+        });
+        const release = JSON.parse(result);
 
-// const recent_five = {
-//     json: path.join(build_dir, "git_nightly_xt_recent_five.json"),
-//     mdx: path.join(build_dir, "git_nightly_xt_recent_five.mdx"),
-// };
+        const matchingAssets = release.assets.filter((asset: any) => {
+            if (!platform) return true;
+            const name = asset.name.toLowerCase();
+            if (platform === "windows") return name.includes("windows") || name.endsWith(".exe");
+            if (platform === "mac") return name.includes("macos") || name.endsWith(".dmg");
+            if (platform === "linux")
+                return (
+                    name.includes("linux") || name.endsWith(".AppImage") || name.endsWith(".tar.gz")
+                );
+            return false;
+        });
 
-// try {
-//     const result = execSync("gh api repos/surge-synthesizer/surge/commits?per_page=5", {
-//         encoding: "utf8",
-//     });
-//     fs.writeFileSync(recent_five.json, result, "utf8");
-// } catch (err) {
-//     console.error("Error running gh api:", err);
-// }
+        if (matchingAssets.length > 0) {
+            downloadUrl = matchingAssets[0].url; // the GH CLI JSON url
+        } else {
+            downloadUrl = release.url; // fallback to release page
+        }
+    } catch (err) {
+        console.error("GH CLI failed:", err);
+        downloadUrl = null;
+    }
 
-// const rawData = fs.readFileSync(recent_five.json, "utf8");
-// const commits = JSON.parse(rawData) as any[];
-// const lines = commits.map((c) => {
-//     const shortSha = c.sha.slice(0, 7);
-//     const message = c.commit.message.split("\n")[0];
-//     const author = c.commit.author.name;
-//     return `- ${shortSha} ${message} - ${author}`;
-// });
-// fs.writeFileSync(recent_five.mdx, lines.join("\n"), "utf8");
+    return downloadUrl;
+}
+
+// console.log(get_release("surge-synthesizer/surge", "windows"));

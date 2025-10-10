@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import Download from "../components/Download.astro";
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
@@ -26,6 +27,7 @@ const { Content } = await render(project);
             quality="100"
             format="png"
         />
+        <Download repo={project.data.repo ?? ""} platform="windows" />
         <Content />
     </article>
 </Base>
