@@ -8,11 +8,70 @@ const surge_xt_releases = (await getCollection(
 const stable = surge_xt_releases.find(
     (r) => r.id === "stable",
 ) as CollectionEntry<"surge_xt_releases">;
+---
 
-const nightly = surge_xt_releases.find(
-    (r) => r.id === "nightly",
-) as CollectionEntry<"surge_xt_releases">;
----z
+<download-button
+    data-windows={stable.data.windows}
+    data-mac={stable.data.mac}
+    data-linux={stable.data.linux}>
+    <a id="surge-release-link" class="download-button">Download</a>
+</download-button>
 
-<a href={`${stable.data.windows}`} class="download-button">Download (Windows)</a>
-<a href={`${nightly.data.windows}`} class="download-button">Download Nightly (Windows)</a>
+<script>
+    class DownloadButton extends HTMLElement {
+        connectedCallback() {
+            const releases = {
+                windows: this.dataset.windows!,
+                mac: this.dataset.mac!,
+                linux: this.dataset.linux!,
+            };
+
+            const anchor = this.querySelector("a") as HTMLAnchorElement;
+
+            let userAgent = window.navigator.userAgent;
+            let platform = window.navigator.platform;
+            let platforms = {
+                mac: ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+                windows: ["Win32", "Win64", "Windows", "WinCE"],
+                ios: ["iPhone", "iPad", "iPod"],
+                bsd: ["FreeBSD", "FreeBSD amd64"],
+            };
+
+            let os = null;
+
+            if (anchor) {
+                if (platforms.mac.indexOf(platform) !== -1) {
+                    anchor.innerText = "Download | macOS";
+                    anchor.href = releases.mac;
+                    os = "mac";
+                } else if (platforms.windows.indexOf(platform) !== -1) {
+                    anchor.innerText = "Download | Windows";
+                    anchor.href = releases.windows;
+                    os = "windows";
+                } else if (platforms.bsd.indexOf(platform) !== -1) {
+                    anchor.innerText = "Download for FreeBSD";
+                    anchor.href =
+                        "https://github.com/surge-synthesizer/surge/blob/main/doc/Linux-and-other-Unix-like-distributions.md#surge-on-freebsd";
+                    os = "bsd";
+                } else if (platforms.ios.indexOf(platform) !== -1) {
+                    anchor.innerText = "Download";
+                    anchor.href = "/downloads";
+                    os = "ios";
+                } else if (/Android/.test(userAgent)) {
+                    anchor.innerText = "Download";
+                    anchor.href = "/downloads";
+                    os = "android";
+                } else if (!os && /Linux/.test(platform)) {
+                    anchor.innerText = "Download | Linux";
+                    anchor.href = "https://github.com/surge-synthesizer/releases-xt/releases";
+                    os = "linux";
+                } else {
+                    anchor.innerText = "Download";
+                    anchor.href = "/downloads";
+                }
+            }
+        }
+    }
+
+    customElements.define("download-button", DownloadButton);
+</script>
