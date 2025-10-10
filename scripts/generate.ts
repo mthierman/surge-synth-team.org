@@ -14,11 +14,9 @@ const nightly = {
 };
 
 const output = {
-    surge_xt: {
-        stable,
-        nightly,
-    },
+    stable,
+    nightly,
 };
 
 mkdirSync("src/content/generated", { recursive: true });
-writeFileSync("src/content/generated/releases.json", JSON.stringify(output, null, 4));
+writeFileSync("src/content/generated/surge_xt_releases.json", JSON.stringify(output, null, 4));

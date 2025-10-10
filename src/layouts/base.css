@@ -124,4 +124,8 @@
     .card-image {
         @apply w-fit rounded-2xl object-contain shadow-2xl shadow-neutral-950;
     }
+
+    .download-button {
+        @apply dark:bg-surge-orange dark:border-surge-orange border-1 border-surge-orange rounded-lg p-2 font-semibold text-zinc-950 no-underline shadow-lg;
+    }
 }

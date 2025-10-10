@@ -3,9 +3,10 @@
     "private": true,
     "type": "module",
     "packageManager": "pnpm@10.18.2",
-    "main": "scripts/index.ts",
+    "main": "index.ts",
     "scripts": {
-        "generate": "node .",
+        "start": "node .",
+        "generate": "node ./scripts/generate.ts",
         "dev": "astro dev",
         "host": "astro dev --host",
         "sync": "astro sync",

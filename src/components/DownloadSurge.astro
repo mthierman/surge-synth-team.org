@@ -1,0 +1,18 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const surge_xt_releases = (await getCollection(
+    "surge_xt_releases",
+)) as CollectionEntry<"surge_xt_releases">[];
+
+const stable = surge_xt_releases.find(
+    (r) => r.id === "stable",
+) as CollectionEntry<"surge_xt_releases">;
+
+const nightly = surge_xt_releases.find(
+    (r) => r.id === "nightly",
+) as CollectionEntry<"surge_xt_releases">;
+---z
+
+<a href={`${stable.data.windows}`} class="download-button">Download (Windows)</a>
+<a href={`${nightly.data.windows}`} class="download-button">Download Nightly (Windows)</a>
