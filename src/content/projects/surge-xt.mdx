@@ -8,10 +8,25 @@ issue_tracker: https://github.com/surge-synthesizer/surge/issues
 repo: surge-synthesizer/surge
 ---
 
-import DownloadSurge from "../../components/DownloadSurge.astro"
+import { Image } from "astro:assets";
+import cover from "./screenshots/surge-xt.png";
+import DownloadSurge from "../../components/DownloadSurge.astro";
 
+<article>
+# Surge XT
+</article>
+
+<Image
+    src={cover}
+    alt="Surge XT"
+    quality="100"
+    format="png"
+    class="w-fit rounded-2xl object-contain shadow"
+/>
+<br />
 <DownloadSurge />
 
+<article>
 Surge XT is an open source hybrid synthesizer, originally sold as a commercial product by Vember Audio, ran by Claes Johanson. In 2018, Claes
 decided to open source a partially completed version of the synth under GPL3, and a group of developers have been improving it since.
 That group is the Surge Synth Team!
@@ -45,3 +60,4 @@ Learn more at [the Surge XT website](https://surge-synthesizer.github.io).
 -   [SURGE, синт для всех \|\| Хороший звук каждый день](https://vk.com/videos-164129570?list=2bf9292e59623ee776&z=video-164129570_456239099%2Fvideos-164129570), Vospi
 -   [Synthesizer Surge 1.8 ist veröffentlicht (Deutsch) / VST für Linux / Windows / Mac](https://www.youtube.com/watch?v=baGxeXJTvOY), Odo Sendaidokai
 -   [One Of The Best FREE Synth Plugins, Now Even Better! 🔥 \| Surge 1.8 Update](https://www.youtube.com/watch?v=IeEiqytXVNg), Venus Theory
+</article>

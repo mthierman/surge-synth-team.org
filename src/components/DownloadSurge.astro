@@ -13,12 +13,9 @@ const stable = surge_xt_releases.find(
 <download-button
     data-windows={stable.data.windows}
     data-mac={stable.data.mac}
-    data-linux={stable.data.linux}>
-    <a
-        id="surge-release-link"
-        class="bg-surge-orange rounded-lg p-2 font-semibold text-zinc-950 no-underline shadow-lg backdrop-blur-lg hover:text-zinc-50"
-        >Download</a
-    >
+    data-linux={stable.data.linux}
+    class="bg-surge-orange w-fit rounded-md p-1 font-semibold shadow">
+    <a id="surge-release-link" class="text-zinc-950 no-underline hover:text-zinc-50">Download</a>
 </download-button>
 
 <script>
