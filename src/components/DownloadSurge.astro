@@ -41,53 +41,36 @@ const stable = surge_xt_releases.find(
             if (anchor) {
                 switch (platform) {
                     case "windows":
-                        {
-                            anchor.innerText = "Download | Windows";
-                            anchor.href = releases.windows;
-                        }
+                        anchor.innerText = "Download | Windows";
+                        anchor.href = releases.windows;
                         break;
 
                     case "mac":
-                        {
-                            anchor.innerText = "Download | macOS";
-                            anchor.href = releases.mac;
-                        }
+                        anchor.innerText = "Download | macOS";
+                        anchor.href = releases.mac;
                         break;
 
                     case "linux":
-                        {
-                            anchor.innerText = "Download | Linux";
-                            anchor.href = releases.linux;
-                        }
+                        anchor.innerText = "Download | Linux";
+                        anchor.href = releases.linux;
                         break;
 
                     case "bsd":
-                        {
-                            anchor.innerText = "Download | FreeBSD";
-                            anchor.href =
-                                "https://github.com/surge-synthesizer/surge/blob/main/doc/Linux-and-other-Unix-like-distributions.md#surge-on-freebsd";
-                        }
+                        anchor.innerText = "Download | FreeBSD";
+                        anchor.href =
+                            "https://github.com/surge-synthesizer/surge/blob/main/doc/Linux-and-other-Unix-like-distributions.md#surge-on-freebsd";
                         break;
 
                     case "android":
-                        {
-                            anchor.innerText = "Download";
-                            anchor.href = downloads_url;
-                        }
-                        break;
-
                     case "ios":
-                        {
-                            anchor.innerText = "Download";
-                            anchor.href = downloads_url;
-                        }
+                    case "unknown":
+                        anchor.innerText = "Download";
+                        anchor.href = downloads_url;
                         break;
 
-                    case "unknown":
-                        {
-                            anchor.innerText = "Download";
-                            anchor.href = downloads_url;
-                        }
+                    default:
+                        anchor.innerText = "Download";
+                        anchor.href = downloads_url;
                         break;
                 }
             }
