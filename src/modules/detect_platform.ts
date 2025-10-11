@@ -1,4 +1,4 @@
-export type Platform = "windows" | "mac" | "linux" | "bsd" | "android" | "ios" | "unknown";
+export type Platform = "mac" | "windows" | "bsd" | "ios" | "android" | "linux" | "unknown";
 
 export default function (): Platform {
     let platforms = {
