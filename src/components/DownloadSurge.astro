@@ -33,8 +33,6 @@ const stable = surge_xt_releases.find(
 
             const anchor = this.querySelector("a") as HTMLAnchorElement;
 
-            let userAgent = window.navigator.userAgent;
-            let platform = window.navigator.platform;
             let platforms = {
                 mac: ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
                 windows: ["Win32", "Win64", "Windows", "WinCE"],
@@ -42,7 +40,10 @@ const stable = surge_xt_releases.find(
                 bsd: ["FreeBSD", "FreeBSD amd64"],
             };
 
-            let os = null;
+            let userAgent = window.navigator.userAgent;
+            let platform = window.navigator.platform;
+            let downloads_url = "https://surge-synthesizer.github.io/downloads/";
+            let os: string | null = null;
 
             if (anchor) {
                 if (platforms.mac.indexOf(platform) !== -1) {
@@ -60,11 +61,11 @@ const stable = surge_xt_releases.find(
                     os = "bsd";
                 } else if (platforms.ios.indexOf(platform) !== -1) {
                     anchor.innerText = "Download";
-                    anchor.href = "/downloads";
+                    anchor.href = downloads_url;
                     os = "ios";
                 } else if (/Android/.test(userAgent)) {
                     anchor.innerText = "Download";
-                    anchor.href = "/downloads";
+                    anchor.href = downloads_url;
                     os = "android";
                 } else if (!os && /Linux/.test(platform)) {
                     anchor.innerText = "Download | Linux";
@@ -72,7 +73,7 @@ const stable = surge_xt_releases.find(
                     os = "linux";
                 } else {
                     anchor.innerText = "Download";
-                    anchor.href = "/downloads";
+                    anchor.href = downloads_url;
                 }
             }
         }

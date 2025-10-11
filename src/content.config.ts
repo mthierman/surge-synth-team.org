@@ -24,18 +24,11 @@ const projects = defineCollection({
 
 const surge_xt_releases = defineCollection({
     loader: file("./src/content/generated/surge_xt_releases.json"),
-    // schema: z.object({
-    //     stable: z.object({
-    //         windows: z.string(),
-    //         mac: z.string(),
-    //         linux: z.string(),
-    //     }),
-    //     nightly: z.object({
-    //         windows: z.string(),
-    //         mac: z.string(),
-    //         linux: z.string(),
-    //     }),
-    // }),
+    schema: z.object({
+        windows: z.string(),
+        mac: z.string(),
+        linux: z.string(),
+    }),
 });
 
 export const collections = {
