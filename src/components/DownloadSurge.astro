@@ -23,6 +23,8 @@ const stable = surge_xt_releases.find(
 </download-button>
 
 <script>
+    import detect_platform from "../modules/detect_platform.ts";
+
     class DownloadButton extends HTMLElement {
         connectedCallback() {
             const releases = {
@@ -33,47 +35,60 @@ const stable = surge_xt_releases.find(
 
             const anchor = this.querySelector("a") as HTMLAnchorElement;
 
-            let platforms = {
-                mac: ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
-                windows: ["Win32", "Win64", "Windows", "WinCE"],
-                ios: ["iPhone", "iPad", "iPod"],
-                bsd: ["FreeBSD", "FreeBSD amd64"],
-            };
-
-            let userAgent = window.navigator.userAgent;
-            let platform = window.navigator.platform;
             let downloads_url = "https://surge-synthesizer.github.io/downloads/";
-            let os: string | null = null;
+            let platform = detect_platform();
 
             if (anchor) {
-                if (platforms.mac.indexOf(platform) !== -1) {
-                    anchor.innerText = "Download | macOS";
-                    anchor.href = releases.mac;
-                    os = "mac";
-                } else if (platforms.windows.indexOf(platform) !== -1) {
-                    anchor.innerText = "Download | Windows";
-                    anchor.href = releases.windows;
-                    os = "windows";
-                } else if (platforms.bsd.indexOf(platform) !== -1) {
-                    anchor.innerText = "Download for FreeBSD";
-                    anchor.href =
-                        "https://github.com/surge-synthesizer/surge/blob/main/doc/Linux-and-other-Unix-like-distributions.md#surge-on-freebsd";
-                    os = "bsd";
-                } else if (platforms.ios.indexOf(platform) !== -1) {
-                    anchor.innerText = "Download";
-                    anchor.href = downloads_url;
-                    os = "ios";
-                } else if (/Android/.test(userAgent)) {
-                    anchor.innerText = "Download";
-                    anchor.href = downloads_url;
-                    os = "android";
-                } else if (!os && /Linux/.test(platform)) {
-                    anchor.innerText = "Download | Linux";
-                    anchor.href = releases.linux;
-                    os = "linux";
-                } else {
-                    anchor.innerText = "Download";
-                    anchor.href = downloads_url;
+                switch (platform) {
+                    case "windows":
+                        {
+                            anchor.innerText = "Download | Windows";
+                            anchor.href = releases.windows;
+                        }
+                        break;
+
+                    case "mac":
+                        {
+                            anchor.innerText = "Download | macOS";
+                            anchor.href = releases.mac;
+                        }
+                        break;
+
+                    case "linux":
+                        {
+                            anchor.innerText = "Download | Linux";
+                            anchor.href = releases.linux;
+                        }
+                        break;
+
+                    case "bsd":
+                        {
+                            anchor.innerText = "Download | FreeBSD";
+                            anchor.href =
+                                "https://github.com/surge-synthesizer/surge/blob/main/doc/Linux-and-other-Unix-like-distributions.md#surge-on-freebsd";
+                        }
+                        break;
+
+                    case "android":
+                        {
+                            anchor.innerText = "Download";
+                            anchor.href = downloads_url;
+                        }
+                        break;
+
+                    case "ios":
+                        {
+                            anchor.innerText = "Download";
+                            anchor.href = downloads_url;
+                        }
+                        break;
+
+                    case "unknown":
+                        {
+                            anchor.innerText = "Download";
+                            anchor.href = downloads_url;
+                        }
+                        break;
                 }
             }
         }
