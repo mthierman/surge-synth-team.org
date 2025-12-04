@@ -91,50 +91,50 @@ const currentProject = Astro.params.project ?? null;
     </head>
 
     <body class="bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
-        <nav id="nav" class="sticky top-0 bg-zinc-950 p-1 shadow-md">
-            <div class="flex flex-wrap items-center justify-center gap-4">
-                <a
-                    href="/"
-                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
-                    >Home</a
-                >
-                <select
-                    aria-label="Project"
-                    name="projects"
-                    id="project-select"
-                    class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
-                    <option value="" selected={currentProject === null}>Select a project...</option>
-                    {
-                        projects.map((project) => {
-                            return (
-                                <option value={project.id} selected={project.id === currentProject}>
-                                    {project.data.title}
-                                </option>
-                            );
-                        })
-                    }
-                </select>
-                <a
-                    href="/open-source"
-                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
-                    >Open Source</a
-                >
-                <a
-                    href="/contact"
-                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
-                    >Contact</a
-                >
-                <select
-                    aria-label="Theme"
-                    name="themes"
-                    id="theme-select"
-                    class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
-                    <option value="">Select a theme...</option>
-                    <option value="auto">System</option>
-                    <option value="dark">Dark</option>
-                    <option value="light">Light</option>
-                </select>
-            </div>
+        <nav
+            id="nav"
+            class="sticky top-0 flex flex-wrap items-center justify-center bg-zinc-950 shadow-md gap-4 p-2">
+            <a
+                href="/"
+                class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                >Home</a
+            >
+            <a
+                href="/open-source"
+                class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                >Open Source</a
+            >
+            <a
+                href="/contact"
+                class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                >Contact</a
+            >
+            <select
+                aria-label="Project"
+                name="projects"
+                id="project-select"
+                class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
+                <option value="" selected={currentProject === null}>Select a project...</option>
+                {
+                    projects.map((project) => {
+                        return (
+                            <option value={project.id} selected={project.id === currentProject}>
+                                {project.data.title}
+                            </option>
+                        );
+                    })
+                }
+            </select>
+            <select
+                aria-label="Theme"
+                name="themes"
+                id="theme-select"
+                class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
+                <option value="">Select a theme...</option>
+                <option value="auto">System</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+            </select>
         </nav>
         <slot />
     </body>
