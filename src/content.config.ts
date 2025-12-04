@@ -22,7 +22,23 @@ const projects = defineCollection({
         }),
 });
 
+const project = defineCollection({
+    loader: glob({ pattern: "**/*.{json}", base: "./src/content/project" }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            order: z.number(),
+            summary: z.string(),
+            cover: image(),
+            categories: z.string().array(),
+            issue_tracker: z.string(),
+            repo: z.string().optional(),
+            url: z.string().optional(),
+        }),
+});
+
 export const collections = {
-    pages: pages,
-    projects: projects,
+    pages,
+    projects,
+    project,
 };
