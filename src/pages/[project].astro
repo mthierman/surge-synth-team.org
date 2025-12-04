@@ -13,14 +13,13 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const url =
+    (project.data.url ?? null) ? project.data.url : `https://github.com/${project.data.repo}`;
 ---
 
 <Base title={`Surge Synth Team | ${project.data.title}`}>
     <article class="content-wrapper">
-        <h1>{project.data.title}</h1>
-        <ul class="m-0 flex list-none gap-4 p-0">
-            {project.data.categories.map((cat) => <li class="w-fit font-bold">{cat}</li>)}
-        </ul>
+        <h1><a href={url}>{project.data.title}</a></h1>
         <Image
             class="product-image"
             src={project.data.cover}
@@ -28,7 +27,9 @@ const { project } = Astro.props;
             quality="100"
             format="png"
         />
+        <p>
+            Categories: {project.data.categories.map((cat) => <>{cat + " "}</>)}
+        </p>
         <p>{project.data.summary}</p>
-        <a href={project.data.url}>{project.data.url}</a>
     </article>
 </Base>
