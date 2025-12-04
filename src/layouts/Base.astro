@@ -9,13 +9,6 @@ interface Props {
 
 const { title } = Astro.props;
 
-const navLinks = [
-    ["Home", "/"],
-    ["Open Source", "/open-source"],
-    ["Contact", "/contact"],
-    ["GitHub", "https://github.com/surge-synthesizer"],
-] as const;
-
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 const currentProject = Astro.params.project ?? null;
 ---
@@ -100,11 +93,16 @@ const currentProject = Astro.params.project ?? null;
     <body class="bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
         <nav id="nav" class="sticky top-0 bg-zinc-950 p-1 shadow-md">
             <div class="flex flex-wrap items-center justify-center gap-4">
+                <a
+                    href="/"
+                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                    >Home</a
+                >
                 <select
                     aria-label="Project"
                     name="projects"
                     id="project-select"
-                    class="bg-zinc-950 text-surge-orange">
+                    class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
                     <option value="" selected={currentProject === null}>Select a project...</option>
                     {
                         projects.map((project) => {
@@ -116,20 +114,21 @@ const currentProject = Astro.params.project ?? null;
                         })
                     }
                 </select>
-                {
-                    navLinks.map(([title, href]) => (
-                        <a
-                            href={href}
-                            class="px-2 text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright">
-                            {title}
-                        </a>
-                    ))
-                }
+                <a
+                    href="/open-source"
+                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                    >Open Source</a
+                >
+                <a
+                    href="/contact"
+                    class="text-nowrap text-surge-orange no-underline hover:text-surge-orange-bright"
+                    >Contact</a
+                >
                 <select
                     aria-label="Theme"
                     name="themes"
                     id="theme-select"
-                    class="bg-zinc-950 text-surge-orange">
+                    class="rounded border border-surge-orange/25 bg-zinc-950 p-1 text-surge-orange">
                     <option value="">Select a theme...</option>
                     <option value="auto">System</option>
                     <option value="dark">Dark</option>
