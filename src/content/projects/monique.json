@@ -6,6 +6,5 @@
     "cover": "./screenshots/monique.jpg",
     "categories": ["Synth"],
     "issue_tracker": "https://github.com/surge-synthesizer/monique-monosynth/issues",
-    "repo": "surge-synthesizer/monique-monosynth",
-    "url": "https://surge-synth-team.org/monique/"
+    "repo": "surge-synthesizer/monique-monosynth"
 }

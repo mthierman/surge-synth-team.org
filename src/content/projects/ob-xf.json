@@ -6,6 +6,5 @@
     "cover": "./screenshots/ob-xf.png",
     "categories": ["Synth"],
     "issue_tracker": "https://github.com/surge-synthesizer/OB-Xf/issues",
-    "repo": "surge-synthesizer/OB-Xf",
-    "url": "https://surge-synth-team.org/ob-xf/"
+    "repo": "surge-synthesizer/OB-Xf"
 }

@@ -6,6 +6,5 @@
     "cover": "./screenshots/b-step.jpg",
     "categories": ["Sequencer"],
     "issue_tracker": "https://github.com/surge-synthesizer/b-step/issues",
-    "repo": "surge-synthesizer/b-step",
-    "url": "https://surge-synth-team.org/b-step/"
+    "repo": "surge-synthesizer/b-step"
 }

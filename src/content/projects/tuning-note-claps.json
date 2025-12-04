@@ -6,6 +6,5 @@
     "cover": "./screenshots/tuning-note-claps.jpg",
     "categories": ["Utility"],
     "issue_tracker": "https://github.com/surge-synthesizer/tuning-note-claps/issues",
-    "repo": "surge-synthesizer/tuning-note-claps",
-    "url": "https://surge-synth-team.org/tuning-note-claps/"
+    "repo": "surge-synthesizer/tuning-note-claps"
 }

@@ -9,21 +9,7 @@ const pages = defineCollection({
 });
 
 const projects = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects" }),
-    schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            order: z.number(),
-            summary: z.string(),
-            cover: image(),
-            categories: z.string().array(),
-            issue_tracker: z.string(),
-            repo: z.string().optional(),
-        }),
-});
-
-const project = defineCollection({
-    loader: glob({ pattern: "**/*.{json}", base: "./src/content/project" }),
+    loader: glob({ pattern: "**/*.json", base: "./src/content/projects" }),
     schema: ({ image }) =>
         z.object({
             title: z.string(),
@@ -40,5 +26,4 @@ const project = defineCollection({
 export const collections = {
     pages,
     projects,
-    project,
 };

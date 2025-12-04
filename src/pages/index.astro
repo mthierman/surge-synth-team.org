@@ -46,7 +46,11 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.order -
                                         ? "text-zinc-950 hover:text-zinc-50"
                                         : "text-zinc-950 hover:text-surge-orange dark:text-zinc-50"
                                 }`}
-                                href={`/${project.id}`}>
+                                href={
+                                    (project.data.url ?? null)
+                                        ? `${project.data.url}`
+                                        : `/${project.id}`
+                                }>
                                 {project.data.title}
                             </a>
                             <p class="text-justify">{project.data.summary}</p>

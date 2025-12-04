@@ -6,6 +6,5 @@
     "cover": "./screenshots/sst-libraries.png",
     "categories": ["Synth", "Microtuning"],
     "issue_tracker": "https://github.com/surge-synthesizer/tuning-library/issues",
-    "repo": "surge-synthesizer/tuning-library",
-    "url": "https://surge-synth-team.org/sst-libraries/"
+    "repo": "surge-synthesizer/tuning-library"
 }
