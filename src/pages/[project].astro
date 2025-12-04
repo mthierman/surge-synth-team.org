@@ -18,6 +18,9 @@ const { project } = Astro.props;
 <Base title={`Surge Synth Team | ${project.data.title}`}>
     <article class="content-wrapper">
         <h1>{project.data.title}</h1>
+        <ul class="m-0 flex list-none gap-4 p-0">
+            {project.data.categories.map((cat) => <li class="w-fit font-bold">{cat}</li>)}
+        </ul>
         <Image
             class="product-image"
             src={project.data.cover}
@@ -26,5 +29,6 @@ const { project } = Astro.props;
             format="png"
         />
         <p>{project.data.summary}</p>
+        <a href={project.data.url}>{project.data.url}</a>
     </article>
 </Base>

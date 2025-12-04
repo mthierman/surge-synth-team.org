@@ -110,7 +110,7 @@ const currentProject = Astro.params.project ?? null;
                         projects.map((project) => {
                             return (
                                 <option value={project.id} selected={project.id === currentProject}>
-                                    {project.id}
+                                    {project.data.title}
                                 </option>
                             );
                         })
