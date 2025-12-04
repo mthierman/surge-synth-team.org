@@ -16,11 +16,8 @@ const navLinks = [
     ["GitHub", "https://github.com/surge-synthesizer"],
 ] as const;
 
-const projects = (await getCollection("projects")).sort(
-    (a: any, b: any) => a.data.order - b.data.order,
-);
-
-const current = Astro.params.project ?? null;
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const currentProject = Astro.params.project ?? null;
 ---
 
 <!doctype html>
@@ -108,11 +105,11 @@ const current = Astro.params.project ?? null;
                     name="projects"
                     id="project-select"
                     class="bg-zinc-950 text-surge-orange">
-                    <option value="" selected={current === null}>Select a project...</option>
+                    <option value="" selected={currentProject === null}>Select a project...</option>
                     {
                         projects.map((project) => {
                             return (
-                                <option value={project.id} selected={project.id === current}>
+                                <option value={project.id} selected={project.id === currentProject}>
                                     {project.id}
                                 </option>
                             );
@@ -140,7 +137,6 @@ const current = Astro.params.project ?? null;
                 </select>
             </div>
         </nav>
-
         <slot />
     </body>
 </html>
