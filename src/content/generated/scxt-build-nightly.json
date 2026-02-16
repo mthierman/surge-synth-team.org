@@ -1,10 +1,22 @@
 {
-    "build_time": "2026-02-16T02:31:16.748076471",
+    "build_time": "2026-02-16T14:25:02.081901672",
     "data": {},
-    "latest_commit": "91071df",
+    "latest_commit": "80e1657",
     "name": "shortcircuit-xt",
     "project_repo": "https://github.com/surge-synthesizer/shortcircuit-xt",
     "recent_commits": [
+        {
+            "author": "Paul",
+            "commit": "80e1657",
+            "date": "2026-02-16T08:51:19-05:00",
+            "message": "Minor: Code review avoids string copy in LFOPane (#2306)"
+        },
+        {
+            "author": "Paul",
+            "commit": "6079f56",
+            "date": "2026-02-16T08:50:48-05:00",
+            "message": "SFZ: Add a utf-8 test I forgot in 91071df32 (#2304)"
+        },
         {
             "author": "Paul",
             "commit": "91071df",
@@ -22,26 +34,14 @@
             "commit": "8ea6d49",
             "date": "2026-02-15T18:34:15-05:00",
             "message": "Cleanup the SFZ error path and remove the old PEGTL parser (#2295)"
-        },
-        {
-            "author": "Paul",
-            "commit": "610faa7",
-            "date": "2026-02-15T18:33:51-05:00",
-            "message": "Workflow: Variant file opens in directory of current variant (#2293)"
-        },
-        {
-            "author": "Paul",
-            "commit": "bd2b6c2",
-            "date": "2026-02-15T17:28:34-05:00",
-            "message": "CLang Format is back! (#2292)"
         }
     ],
     "releases": {
-        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-91071df-Linux.zip",
-        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-16-91071df.dmg",
+        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-80e1657-Linux.zip",
+        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-16-80e1657.dmg",
         "other": "https://github.com/shortcircuit-xt/releases-xt/releases/tag/Nightly",
-        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-91071df-Windows-64bit.exe",
-        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-91071df-Windows-64bit.zip"
+        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-80e1657-Windows-64bit.exe",
+        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-80e1657-Windows-64bit.zip"
     },
     "version": "main"
 }
