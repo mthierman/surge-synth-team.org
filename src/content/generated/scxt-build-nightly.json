@@ -1,10 +1,22 @@
 {
-    "build_time": "2026-02-15T22:53:06.904986473",
+    "build_time": "2026-02-16T00:06:34.157393812",
     "data": {},
-    "latest_commit": "bd2b6c2",
+    "latest_commit": "8ea6d49",
     "name": "shortcircuit-xt",
     "project_repo": "https://github.com/surge-synthesizer/shortcircuit-xt",
     "recent_commits": [
+        {
+            "author": "Paul",
+            "commit": "8ea6d49",
+            "date": "2026-02-15T18:34:15-05:00",
+            "message": "Cleanup the SFZ error path and remove the old PEGTL parser (#2295)"
+        },
+        {
+            "author": "Paul",
+            "commit": "610faa7",
+            "date": "2026-02-15T18:33:51-05:00",
+            "message": "Workflow: Variant file opens in directory of current variant (#2293)"
+        },
         {
             "author": "Paul",
             "commit": "bd2b6c2",
@@ -22,26 +34,14 @@
             "commit": "012b71d",
             "date": "2026-02-14T21:57:49+01:00",
             "message": "Make MPE tuning awareness optional (#2279)"
-        },
-        {
-            "author": "Paul",
-            "commit": "6daa8cb",
-            "date": "2026-02-14T10:47:40-05:00",
-            "message": "Partial fix for variants failing to load on unstream (#2281)"
-        },
-        {
-            "author": "Paul",
-            "commit": "e62e842",
-            "date": "2026-02-14T08:25:32-05:00",
-            "message": "A couple of jucegui upgrades; and a tiny fix (#2280)"
         }
     ],
     "releases": {
-        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-15-bd2b6c2-Linux.zip",
-        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-15-bd2b6c2.dmg",
+        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-8ea6d49-Linux.zip",
+        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-16-8ea6d49.dmg",
         "other": "https://github.com/shortcircuit-xt/releases-xt/releases/tag/Nightly",
-        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-15-bd2b6c2-Windows-64bit.exe",
-        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-15-bd2b6c2-Windows-64bit.zip"
+        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-8ea6d49-Windows-64bit.exe",
+        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-16-8ea6d49-Windows-64bit.zip"
     },
     "version": "main"
 }
