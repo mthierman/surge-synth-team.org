@@ -1,10 +1,16 @@
 {
-    "build_time": "2026-02-17T00:09:57.833997496",
+    "build_time": "2026-02-17T19:30:52.808652497",
     "data": {},
-    "latest_commit": "2884f61",
+    "latest_commit": "56fd0b7",
     "name": "ob-xf",
     "project_repo": "https://github.com/surge-synthesizer/OB-Xf",
     "recent_commits": [
+        {
+            "author": "Paul",
+            "commit": "56fd0b7",
+            "date": "2026-02-17T11:06:05-05:00",
+            "message": "Use the theme/skin for save dialog construction, if available (#582)"
+        },
         {
             "author": "EvilDragon",
             "commit": "2884f61",
@@ -28,20 +34,14 @@
             "commit": "6ab4e69",
             "date": "2026-02-04T16:14:48+01:00",
             "message": "Revert \"Clicking on patch name also opens the browser (#575)\" (#577)"
-        },
-        {
-            "author": "EvilDragon",
-            "commit": "15bff80",
-            "date": "2026-02-03T11:16:09+01:00",
-            "message": "Clicking on patch name also opens the browser (#575)"
         }
     ],
     "releases": {
-        "linux64": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-2884f61-Linux.deb",
-        "macos": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/ob-xf-macOS-2026-02-17-2884f61.dmg",
+        "linux64": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-56fd0b7-Linux.deb",
+        "macos": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/ob-xf-macOS-2026-02-17-56fd0b7.dmg",
         "other": "https://github.com/surge-synthesizer/OB-Xf/releases/tag/Nightly",
-        "win64": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-2884f61-Windows.exe",
-        "win64zip": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-2884f61-Windows.zip"
+        "win64": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-56fd0b7-Windows.exe",
+        "win64zip": "https://github.com/surge-synthesizer/OB-Xf/releases/download/Nightly/obxf-2026-02-17-56fd0b7-Windows.zip"
     },
     "version": "main"
 }
