@@ -1,10 +1,16 @@
 {
-    "build_time": "2026-02-19T22:37:04.263623981",
+    "build_time": "2026-02-20T00:47:33.924453617",
     "data": {},
-    "latest_commit": "d49bf82",
+    "latest_commit": "97fb317",
     "name": "shortcircuit-xt",
     "project_repo": "https://github.com/surge-synthesizer/shortcircuit-xt",
     "recent_commits": [
+        {
+            "author": "Andreya-Autumn",
+            "commit": "97fb317",
+            "date": "2026-02-20T01:14:50+01:00",
+            "message": "Finally change LFO default to Sine on new instances"
+        },
         {
             "author": "Paul",
             "commit": "d49bf82",
@@ -28,20 +34,14 @@
             "commit": "80e1657",
             "date": "2026-02-16T08:51:19-05:00",
             "message": "Minor: Code review avoids string copy in LFOPane (#2306)"
-        },
-        {
-            "author": "Paul",
-            "commit": "6079f56",
-            "date": "2026-02-16T08:50:48-05:00",
-            "message": "SFZ: Add a utf-8 test I forgot in 91071df32 (#2304)"
         }
     ],
     "releases": {
-        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-19-d49bf82-Linux.zip",
-        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-19-d49bf82.dmg",
+        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-97fb317-Linux.zip",
+        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-20-97fb317.dmg",
         "other": "https://github.com/shortcircuit-xt/releases-xt/releases/tag/Nightly",
-        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-19-d49bf82-Windows-64bit.exe",
-        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-19-d49bf82-Windows-64bit.zip"
+        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-97fb317-Windows-64bit.exe",
+        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-97fb317-Windows-64bit.zip"
     },
     "version": "main"
 }
