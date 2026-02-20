@@ -1,10 +1,16 @@
 {
-    "build_time": "2026-02-20T01:04:20.726460435",
+    "build_time": "2026-02-20T02:44:50.898490593",
     "data": {},
-    "latest_commit": "7e1f7d5",
+    "latest_commit": "4f3ba5a",
     "name": "shortcircuit-xt",
     "project_repo": "https://github.com/surge-synthesizer/shortcircuit-xt",
     "recent_commits": [
+        {
+            "author": "Andreya-Autumn",
+            "commit": "4f3ba5a",
+            "date": "2026-02-20T03:12:09+01:00",
+            "message": "Fix up LFO curve menu"
+        },
         {
             "author": "Paul",
             "commit": "7e1f7d5",
@@ -28,20 +34,14 @@
             "commit": "97032d3",
             "date": "2026-02-19T01:42:09+01:00",
             "message": "Fix DSP in Shepard Phaser, and parallelize it a bit"
-        },
-        {
-            "author": "Andreya-Autumn",
-            "commit": "9584288",
-            "date": "2026-02-18T14:51:26+01:00",
-            "message": "MPE/PitchBend tuning awareness actually works right and is sensibly switchable"
         }
     ],
     "releases": {
-        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-7e1f7d5-Linux.zip",
-        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-20-7e1f7d5.dmg",
+        "linux64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-4f3ba5a-Linux.zip",
+        "macos": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/shortcircuit-xt-macOS-2026-02-20-4f3ba5a.dmg",
         "other": "https://github.com/shortcircuit-xt/releases-xt/releases/tag/Nightly",
-        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-7e1f7d5-Windows-64bit.exe",
-        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-7e1f7d5-Windows-64bit.zip"
+        "win64": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-4f3ba5a-Windows-64bit.exe",
+        "win64zip": "https://github.com/surge-synthesizer/shortcircuit-xt/releases/download/Nightly/ShortcircuitXT-2026-02-20-4f3ba5a-Windows-64bit.zip"
     },
     "version": "main"
 }
