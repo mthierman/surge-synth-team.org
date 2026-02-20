@@ -99,10 +99,10 @@ const navLinks = [
     <body>
         <nav
             id="nav"
-            class="sticky top-0 flex flex-wrap items-center justify-center gap-4 bg-inherit p-2 shadow-md shadow-black/25">
+            class="sticky top-0 flex flex-wrap items-center justify-center gap-4 border-b border-black/10 bg-inherit p-2 shadow-md shadow-black/25 dark:border-white/10">
             {
                 navLinks.map(([title, href]) => (
-                    <a href={href} class="text-nowrap no-underline text-inherit">
+                    <a href={href} class="text-nowrap text-inherit no-underline">
                         {title}
                     </a>
                 ))
