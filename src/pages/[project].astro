@@ -6,10 +6,12 @@ import Base from "../layouts/Base.astro";
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
 
-    return projects.map((project) => ({
-        params: { project: project.id },
-        props: { project },
-    }));
+    return projects
+        .filter((project) => project.id !== "ob-xf")
+        .map((project) => ({
+            params: { project: project.id },
+            props: { project },
+        }));
 }
 
 const { project } = Astro.props;

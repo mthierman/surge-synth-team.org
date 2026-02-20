@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+    currentProject?: string | null;
+}
+
+const { currentProject = null } = Astro.props;
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<select aria-label="Project" name="projects" id="project-select">
+    <option value="" selected={currentProject === null}>Select a project...</option>
+    {
+        projects.map((project) => {
+            return (
+                <option value={project.id} selected={project.id === currentProject}>
+                    {project.data.title}
+                </option>
+            );
+        })
+    }
+</select>
