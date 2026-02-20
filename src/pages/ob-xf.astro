@@ -93,31 +93,31 @@ const docsLinks = [
         <ClientRouter />
     </head>
 
-    <body class="bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
-        <header class="sticky top-0 z-20 border-b border-surge-orange/60 bg-inherit shadow-md shadow-black/25">
-            <nav id="nav" class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center gap-4 p-2">
-                <a href="/" class="text-nowrap no-underline text-inherit">Home</a>
-                <a href="#faq" class="text-nowrap no-underline text-inherit">FAQ</a>
-                <details class="relative">
-                    <summary class="cursor-pointer list-none text-nowrap">Documentation</summary>
-                    <div
-                        class="absolute right-0 mt-2 min-w-44 rounded border border-neutral-900/15 bg-neutral-50 p-2 shadow-lg dark:border-neutral-100/15 dark:bg-neutral-800">
-                        {
-                            docsLinks.map(([title, href]) => (
-                                <a
-                                    href={href}
-                                    class="block rounded px-2 py-1 text-inherit no-underline hover:bg-neutral-900/5 dark:hover:bg-neutral-100/10">
-                                    {title}
-                                </a>
-                            ))
-                        }
-                    </div>
-                </details>
-                <a href="#about" class="text-nowrap no-underline text-inherit">About</a>
-                <ProjectSelector currentProject="ob-xf" />
-                <ThemeSelector />
-            </nav>
-        </header>
+    <body>
+        <nav
+            id="nav"
+            class="border-b border-black/10 dark:border-white/10 sticky top-0 flex flex-wrap items-center justify-center gap-4 bg-inherit p-2 shadow-md shadow-black/25">
+            <a href="/" class="text-nowrap text-inherit no-underline">Home</a>
+            <a href="#faq" class="text-nowrap text-inherit no-underline">FAQ</a>
+            <details class="relative">
+                <summary class="cursor-pointer list-none text-nowrap">Documentation</summary>
+                <div
+                    class="absolute right-0 mt-2 min-w-44 rounded border border-neutral-900/15 bg-neutral-50 p-2 shadow-lg dark:border-neutral-100/15 dark:bg-neutral-800">
+                    {
+                        docsLinks.map(([title, href]) => (
+                            <a
+                                href={href}
+                                class="block rounded px-2 py-1 text-inherit no-underline hover:bg-neutral-900/5 dark:hover:bg-neutral-100/10">
+                                {title}
+                            </a>
+                        ))
+                    }
+                </div>
+            </details>
+            <a href="#about" class="text-nowrap text-inherit no-underline">About</a>
+            <ProjectSelector currentProject="ob-xf" />
+            <ThemeSelector />
+        </nav>
 
         <main>
             <section
@@ -160,7 +160,7 @@ const docsLinks = [
             <section class="bg-surge-orange/15 px-4 py-12">
                 <div class="mx-auto w-full max-w-6xl">
                     <h2 class="text-2xl font-bold">Highlights</h2>
-                    <p class="mt-2 max-w-prose text-sm opacity-90">
+                    <p class="mt-2 max-w-prose text-sm">
                         Placeholder section for feature callouts. Replace each card with final copy
                         and imagery.
                     </p>
@@ -192,7 +192,7 @@ const docsLinks = [
 
             <section id="manual" class="mx-auto w-full max-w-6xl px-4 py-12">
                 <h2 class="text-2xl font-bold">Manual</h2>
-                <p class="mt-2 max-w-prose text-sm opacity-90">
+                <p class="mt-2 max-w-prose text-sm">
                     Placeholder section for documentation intro and manual links.
                 </p>
                 <div
@@ -203,7 +203,7 @@ const docsLinks = [
 
             <section id="changelog" class="mx-auto w-full max-w-6xl px-4 pb-12">
                 <h2 class="text-2xl font-bold">Changelog</h2>
-                <p class="mt-2 max-w-prose text-sm opacity-90">
+                <p class="mt-2 max-w-prose text-sm">
                     Placeholder section for release highlights and update notes.
                 </p>
                 <div
@@ -236,7 +236,7 @@ const docsLinks = [
 
             <section id="about" class="mx-auto w-full max-w-6xl px-4 py-12">
                 <h2 class="text-2xl font-bold">About</h2>
-                <p class="mt-2 max-w-prose text-sm opacity-90">
+                <p class="mt-2 max-w-prose text-sm">
                     Placeholder section for project background, contributors, and links.
                 </p>
                 <div
