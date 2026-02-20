@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import obxf_build_nightly from "../content/generated/obxf-build-nightly.json" with { type: "json" };
 import ObxfCover from "../content/projects/screenshots/ob-xf_3d_render.png";
+import ProjectSelector from "../components/ProjectSelector.astro";
+import ThemeSelector from "../components/ThemeSelector.astro";
 import "../layouts/base.css";
 
 const docsLinks = [
@@ -92,37 +94,28 @@ const docsLinks = [
     </head>
 
     <body class="bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
-        <header
-            class="sticky top-0 z-20 border-b border-neutral-900/10 bg-inherit shadow-md shadow-black/15 dark:border-neutral-100/10">
-            <nav
-                class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-                <a href="/" class="text-lg font-bold text-inherit no-underline">OB-Xf</a>
-                <div class="flex flex-wrap items-center gap-3 text-sm font-semibold">
-                    <a href="/" class="text-inherit no-underline">Home</a>
-                    <a href="#faq" class="text-inherit no-underline">FAQ</a>
-                    <details class="relative">
-                        <summary class="cursor-pointer list-none">Documentation</summary>
-                        <div
-                            class="absolute right-0 mt-2 min-w-44 rounded border border-neutral-900/15 bg-neutral-50 p-2 shadow-lg dark:border-neutral-100/15 dark:bg-neutral-800">
-                            {
-                                docsLinks.map(([title, href]) => (
-                                    <a
-                                        href={href}
-                                        class="block rounded px-2 py-1 text-inherit no-underline hover:bg-neutral-900/5 dark:hover:bg-neutral-100/10">
-                                        {title}
-                                    </a>
-                                ))
-                            }
-                        </div>
-                    </details>
-                    <a href="#about" class="text-inherit no-underline">About</a>
-                    <select aria-label="Theme" name="themes" id="theme-select">
-                        <option value="">Select a theme...</option>
-                        <option value="auto">System</option>
-                        <option value="dark">Dark</option>
-                        <option value="light">Light</option>
-                    </select>
-                </div>
+        <header class="sticky top-0 z-20 border-b border-surge-orange/60 bg-inherit shadow-md shadow-black/25">
+            <nav id="nav" class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center gap-4 p-2">
+                <a href="/" class="text-nowrap no-underline text-inherit">Home</a>
+                <a href="#faq" class="text-nowrap no-underline text-inherit">FAQ</a>
+                <details class="relative">
+                    <summary class="cursor-pointer list-none text-nowrap">Documentation</summary>
+                    <div
+                        class="absolute right-0 mt-2 min-w-44 rounded border border-neutral-900/15 bg-neutral-50 p-2 shadow-lg dark:border-neutral-100/15 dark:bg-neutral-800">
+                        {
+                            docsLinks.map(([title, href]) => (
+                                <a
+                                    href={href}
+                                    class="block rounded px-2 py-1 text-inherit no-underline hover:bg-neutral-900/5 dark:hover:bg-neutral-100/10">
+                                    {title}
+                                </a>
+                            ))
+                        }
+                    </div>
+                </details>
+                <a href="#about" class="text-nowrap no-underline text-inherit">About</a>
+                <ProjectSelector currentProject="ob-xf" />
+                <ThemeSelector />
             </nav>
         </header>
 
@@ -256,6 +249,8 @@ const docsLinks = [
 </html>
 
 <script>
+    import { navigate } from "astro:transitions/client";
+
     function detectPlatform() {
         const userAgent = navigator.userAgent;
 
@@ -274,7 +269,7 @@ const docsLinks = [
         return "other";
     }
 
-    function setThemeSelection() {
+    function setupThemeSelection() {
         const themeSelect = document.getElementById("theme-select") as HTMLSelectElement | null;
         if (!themeSelect) {
             return;
@@ -298,6 +293,21 @@ const docsLinks = [
                     document.documentElement.setAttribute("data-theme", "light");
                     break;
             }
+        });
+    }
+
+    function setupProjectSelection() {
+        const projectSelect = document.getElementById("project-select") as HTMLSelectElement | null;
+        if (!projectSelect) {
+            return;
+        }
+
+        projectSelect.addEventListener("change", () => {
+            if (projectSelect.value === "") {
+                return;
+            }
+
+            navigate(`/${projectSelect.value}`);
         });
     }
 
@@ -338,7 +348,8 @@ const docsLinks = [
     }
 
     function setup() {
-        setThemeSelection();
+        setupThemeSelection();
+        setupProjectSelection();
         setupDownloadLink();
     }
 

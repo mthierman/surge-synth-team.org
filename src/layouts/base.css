@@ -42,7 +42,7 @@
     }
 
     select {
-        @apply rounded border border-neutral-900/15 bg-inherit p-1 text-inherit dark:border-neutral-100/15;
+        @apply rounded border border-neutral-900/15 bg-white dark:bg-black border-r-2 p-1 text-inherit dark:border-neutral-100/15;
     }
 
     article {

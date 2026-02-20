@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import { getCollection } from "astro:content";
+import ProjectSelector from "../components/ProjectSelector.astro";
+import ThemeSelector from "../components/ThemeSelector.astro";
 import "./base.css";
 
 interface Props {
@@ -8,8 +9,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 const currentProject = Astro.params.project ?? null;
 
 const navLinks = [
@@ -108,24 +107,8 @@ const navLinks = [
                     </a>
                 ))
             }
-            <select aria-label="Project" name="projects" id="project-select">
-                <option value="" selected={currentProject === null}>Select a project...</option>
-                {
-                    projects.map((project) => {
-                        return (
-                            <option value={project.id} selected={project.id === currentProject}>
-                                {project.data.title}
-                            </option>
-                        );
-                    })
-                }
-            </select>
-            <select aria-label="Theme" name="themes" id="theme-select">
-                <option value="">Select a theme...</option>
-                <option value="auto">System</option>
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-            </select>
+            <ProjectSelector currentProject={currentProject} />
+            <ThemeSelector />
         </nav>
         <slot />
     </body>
